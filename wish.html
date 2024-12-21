@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="wish.css">
+    <link rel="" href="wish.js">
+</head>
+<body>
+    <video class="video-bg" autoplay muted loop>
+        <!-- <source src="vedio/vc.mp4" type="video/mp4"> -->
+        <source src="vc.mp4" type="video/mp4">
+      </video>
+    <div class="container">
+        <div class="message">
+          <h1>Merry <br>Christmas</h1>
+        </div>
+      </div>
+      <audio  id="background-music" autoplay loop muted>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+      <!-- <button  onclick="unmuteAudio()">Play Sound</button> -->
+      <button class="audio-button" id="toggle-sound">Stop Sound</button>
+    
+      <script>
+        function unmuteAudio() {
+          const audio = document.getElementById('background-music');
+          audio.muted = false; // Unmute audio
+          audio.play();        // Ensure audio plays
+        }
+        const audio = document.getElementById('background-music');
+        const toggleButton = document.getElementById('toggle-sound');
+
+    // Toggle audio play and pause
+    toggleButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.muted = false;  // Unmute if previously muted
+        audio.play();
+        toggleButton.textContent = 'Stop Sound';
+      } else {
+        audio.pause();
+        toggleButton.textContent = 'Play Sound';
+      }
+    });
+      </script>
+</body>
+</html>
